@@ -1,0 +1,6 @@
+framework module Pods_SalaryPerSecond {
+  umbrella header "Pods-SalaryPerSecond-umbrella.h"
+
+  export *
+  module * { export * }
+}
