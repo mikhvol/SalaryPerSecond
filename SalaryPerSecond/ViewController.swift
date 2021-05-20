@@ -43,7 +43,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
             self.workedTotalSeconds = self.dateService?.getTotalWorkedSeconds()
             self.salaryOverPastTime = SalaryService.getSalaryOverPastTime(self.workedTotalSeconds!, self.salaryPerDay)
-            self.salaryPerSecondLabel.text = String(self.salaryOverPastTime!)
+            self.salaryPerSecondLabel.text = "\(self.salaryOverPastTime ?? 0.0)"
             print(self.salaryOverPastTime)
         })
     }
@@ -90,6 +90,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Delegates
     
   func textFieldDidChangeSelection(_ textField: UITextField) {
-    self.salaryPerDay = Double(textField.text!)
+    self.salaryPerDay = Double(textField.text ?? "0")
   }
 }
